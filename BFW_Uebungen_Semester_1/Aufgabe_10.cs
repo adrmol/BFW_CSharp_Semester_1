@@ -8,6 +8,7 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
+
             //Usereingabe
             Console.WriteLine("Bitte geben Sie einen String ein:");
             string str1 = Console.ReadLine();

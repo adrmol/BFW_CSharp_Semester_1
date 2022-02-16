@@ -15,7 +15,7 @@ namespace BFW_Uebungen_Semester_1
             string a = "Hallo!";
             string b = "Hier kommt das Ergebnis:";
 
-            res = (var1/var2/2*var2-var1+3*var2) % 27;
+            res = (var1 / var2 / 2 * var2 - var1 + 3 * var2) % 27;
 
             Console.WriteLine(a);
             Console.WriteLine(b);

@@ -29,7 +29,7 @@ namespace BFW_Uebungen_Semester_1
             //Array wird auf 6 erweitert
             Array.Resize(ref intarray1, 6);
 
-            //Werte werden an 5. und 6.Stelle eingesetzt
+            //Werte werden an 5. und 6. Stelle eingesetzt
             intarray1[4] = 200;
             intarray1[5] = 500;
 
