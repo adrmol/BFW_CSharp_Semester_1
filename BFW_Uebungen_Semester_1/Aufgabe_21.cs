@@ -10,18 +10,21 @@ namespace BFW_Uebungen_Semester_1
         {
             int[] array = new int[0];
             bool userentscheidung = true;
-            int i = 0;
             int summe = 0;
 
+            //Solange nicht später "n" geantwortet wird, wird diese Schleife ausgeführt.
             while (userentscheidung == true)
 
             {
-                string userinput = "0";
+                bool userinputrichtig = false;
+
+                //Usereingabe
                 Console.WriteLine("Bitte geben Sie eine Zahl ein:");
 
+                //falls eine Zahl korrekt eingegeben wurde, wird das Array um eins erweitert und die Eingabe an letzter Stelle gespeichert.
                 if (int.TryParse(Console.ReadLine(), out int input))
                 {
-
+                    int i = 0;
                     int[] tempArr = new int[array.Length + 1];
                     for (int j = 0; j < array.Length; j++)
                         tempArr[j] = array[j];
@@ -30,22 +33,26 @@ namespace BFW_Uebungen_Semester_1
                     i++;
 
                 }
-                while (userinput.Equals("0"))
+
+                //Schleife läuft solange bis "y" oder "n" eingegeben wurde.
+                while (!userinputrichtig)
                 {
                     Console.WriteLine("Soll noch eine Zahl eingegeben werden? (y/n)");
 
                     switch (Console.ReadLine())
                     {
-
+                        //Wenn "n" dann gehen wir aus den beiden Schleifen raus.
                         case "n":
                             userentscheidung = false;
-                            userinput = "1";
+                            userinputrichtig = true;
                             break;
 
+                        //Wenn "y" dann gehen wir nur aus der y/n Schleife raus und gehen zurück zur Zahleingabe.
                         case "y":
-                            userinput = "1";
+                            userinputrichtig = true;
                             break;
 
+                        //Falls weder "y" oder "n" eingegeben wurde, wird immer wieder nach "y" und "n" gefragt.
                         default:
                             break;
                     }
@@ -53,17 +60,20 @@ namespace BFW_Uebungen_Semester_1
 
             }
 
+            //Ausgabe aller Werte im Array (kumulativ).
             Console.WriteLine("\nIhr Ergebnis:");
             foreach (int k in array)
             {
                 Console.WriteLine(summe += k);
             }
 
-            Console.WriteLine("\nArray:");
-            foreach (int k in array)
-            {
-                Console.WriteLine(k);
-            }
+            //Array Inhalt ausgeben zum überprüfen.
+
+            //Console.WriteLine("\nArray:");
+            //foreach (int k in array)
+            //{
+            //    Console.WriteLine(k);
+            //}
         }
 
     }

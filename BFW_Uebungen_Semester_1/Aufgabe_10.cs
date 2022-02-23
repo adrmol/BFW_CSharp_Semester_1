@@ -9,26 +9,25 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
 
-            //Usereingabe
+            //Usereingabe.
             Console.WriteLine("Bitte geben Sie einen String ein:");
             string str1 = Console.ReadLine();
 
-            //Leerzeichen entfernen
+            //Leerzeichen entfernen.
             str1 = str1.Trim();
 
-            //Länge ausgeben
+            //Länge ausgeben.
             int a = str1.Length;
             Console.WriteLine("Länge: " + a);
 
-            //Ersten Buchstaben in Groß ausgeben
-            string str2 = str1.Substring(0, 1);
-            str2 = str2.ToUpper();
-            Console.WriteLine("Erster Buchstabe: " + str2);
+            //Ersten Buchstaben in Groß ausgeben.
+            string str2 = str1.ToUpper();
+            Console.WriteLine("Erster Buchstabe: " + str2[0]);
 
-            //Letzten Buchstaben in Groß ausgeben
-            string str3 = str1.Substring(a-1, 1);
-            str3 = str3.ToUpper();
-            Console.WriteLine("Letzter Buchstabe: " + str3);
+            //Letzten Buchstaben in Groß ausgeben.
+            string str3 = str1.ToUpper();
+            Console.WriteLine("Letzter Buchstabe: " + str3[a-1]);
+
         }
     }
 }

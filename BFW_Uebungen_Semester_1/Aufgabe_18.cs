@@ -11,9 +11,14 @@ namespace BFW_Uebungen_Semester_1
         {
 
             Console.WriteLine("Bitte geben Sie eine Begrüßung ein:");
+
+            //Eingabe.
             string input1 = Console.ReadLine();
+
+            //Leerzeichen weg mit "Trim(), umwandeln in Kleinbuchstaben (ToLower()) damit es egal ist ob der Benutzer Groß- oder Kleinbuchstaben verwendet.
             string input2 = input1.Trim().ToLower();
 
+            //Drei Begrüßungen bekannt: hi, hey, hallo.
             switch(input2)
             {
                 case "hi":

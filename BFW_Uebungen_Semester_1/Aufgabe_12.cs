@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BFW_Uebungen_Semester_1
 {
-    class Aufgabe_12
+    class Aufgabe_12 //und Aufgabe 13
     {
         public static void Start()
         {
@@ -27,9 +27,14 @@ namespace BFW_Uebungen_Semester_1
             }
 
             //Array wird auf 6 erweitert
-            Array.Resize(ref intarray1, 6);
+            //Array.Resize(ref intarray1, 6); <- geht vielleicht, ist aber nicht im Skript.
+            //Arrays erweitern: Skript Seite 145
+            int[] tempArr = new int[intarray1.Length + 2]; //Die "2" gibt an dass die neue Länge um 2 größer ist.
+            for (int i = 0; i < intarray1.Length; i++)
+                tempArr[i] = intarray1[i];
+            intarray1 = tempArr;
 
-            //Werte werden an 5. und 6. Stelle eingesetzt
+            //Werte werden an der 5. und 6. Stelle eingesetzt
             intarray1[4] = 200;
             intarray1[5] = 500;
 
@@ -41,12 +46,12 @@ namespace BFW_Uebungen_Semester_1
             }
 
             //Ausgabe
-            Console.WriteLine("Erstes Element: " + intarray1[0].ToString());
-            Console.WriteLine("Zweites Element: " + intarray1[1].ToString());
-            Console.WriteLine("Drittes Element: " + intarray1[2].ToString());
-            Console.WriteLine("Viertes Element: " + intarray1[3].ToString());
-            Console.WriteLine("Fünftes Element: " + intarray1[4].ToString());
-            Console.WriteLine("Sechstes Element: " + intarray1[5].ToString());
+            Console.WriteLine("Erstes Element: " + intarray1[0]);
+            Console.WriteLine("Zweites Element: " + intarray1[1]);
+            Console.WriteLine("Drittes Element: " + intarray1[2]);
+            Console.WriteLine("Viertes Element: " + intarray1[3]);
+            Console.WriteLine("Fünftes Element: " + intarray1[4]);
+            Console.WriteLine("Sechstes Element: " + intarray1[5]);
         }
     }
 }

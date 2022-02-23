@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace BFW_Uebungen_Semester_1
 {
@@ -9,7 +8,7 @@ namespace BFW_Uebungen_Semester_1
         {
             while(true)
             {
-                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15b, 18, 19, 19b, 20];\nProgramm schließen: exit");
+                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15b, 17, 18, 19, 19b, 20, 21, 22, 23, 24];\nProgramm schließen: exit");
                 switch (Console.ReadLine())
                 {
 
@@ -73,6 +72,11 @@ namespace BFW_Uebungen_Semester_1
                         Aufgabe_15b.Start();
                         break;
 
+                    case "17":
+                        Console.WriteLine("Aufgabe 17:\n");
+                        Aufgabe_17.Start();
+                        break;
+
                     case "18":
                         Console.WriteLine("Aufgabe 18:\n");
                         Aufgabe_18.Start();
@@ -96,6 +100,21 @@ namespace BFW_Uebungen_Semester_1
                     case "21":
                         Console.WriteLine("Aufgabe 21:\n");
                         Aufgabe_21.Start();
+                        break;
+
+                    case "22":
+                        Console.WriteLine("Aufgabe 22:\n");
+                        Aufgabe_22.Start();
+                        break;
+
+                    case "23":
+                        Console.WriteLine("Aufgabe 23:\n");
+                        Aufgabe_23.Start();
+                        break;
+
+                    case "24":
+                        Console.WriteLine("Aufgabe 24:\n");
+                        Aufgabe_24.Start();
                         break;
 
                     case "exit":
