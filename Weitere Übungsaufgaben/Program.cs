@@ -8,8 +8,8 @@ namespace Weitere_Übungsaufgaben
         {
             while (true)
             {
-                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [A1, A2, A3, B1, B2a, B2b, C1a, C1b Y1];\nProgramm schließen: exit");
-                switch ("x2"/*Console.ReadLine().ToLower()*/)
+                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [A1, A2, A3, B1, B2a, B2b, C1a, C1b, X2, X3, Y1];\nProgramm schließen: exit");
+                switch ("x3"/*Console.ReadLine().ToLower()*/)
                 {
 
                     case "a1":
@@ -60,6 +60,11 @@ namespace Weitere_Übungsaufgaben
                     case "x2":
                         Console.WriteLine("Aufgabe X2:\n");
                         Aufgabe_X2.Start();
+                        break;
+
+                    case "x3":
+                        Console.WriteLine("Aufgabe X3:\n");
+                        Aufgabe_X3.Start();
                         break;
 
                     case "exit":
