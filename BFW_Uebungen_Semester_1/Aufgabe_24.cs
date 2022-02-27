@@ -30,6 +30,8 @@ namespace BFW_Uebungen_Semester_1
                     tempArr[j] = array[j - 1];
                 array = tempArr;
             }
+            else
+                Console.WriteLine("\nPlatz nicht vorhanden!\n");
         }
 
         public static void Loeschen(ref int[] array, int platz)
@@ -45,22 +47,33 @@ namespace BFW_Uebungen_Semester_1
                     tempArr[j] = array[j + 1];
                 array = tempArr;
             }
+            else
+                Console.WriteLine("\nPlatz nicht vorhanden!\n");
         }
 
         public static void Verdoppeln(ref int[] array, int platz)
         {
             if (platz < array.Length && platz > 0)
-            {
                 array[platz - 1] *= 2;
-            }
+            else
+                Console.WriteLine("\nPlatz nicht vorhanden!\n");
         }
 
         public static void Halbieren(ref int[] array, int platz)
         {
             if (platz < array.Length && platz > 0)
-            {
                 array[platz - 1] /= 2;
-            }
+            else
+                Console.WriteLine("\nPlatz nicht vorhanden!\n");
+        }
+
+        public static void Anzeigen(ref int[] array)
+        {
+            int arrayplatzausgabe = 0;
+            Console.WriteLine();
+            foreach (int i in array)
+                Console.WriteLine("Array[{0}]: {1}", arrayplatzausgabe++, i);
+            Console.WriteLine();
         }
 
 
@@ -72,8 +85,8 @@ namespace BFW_Uebungen_Semester_1
 
             while (true)
             {
-                int arrayplatzausgabe = 0;
-                Console.WriteLine("Was wollen Sie mit dem Array tun?\nSpeichern\t[1]\nEinfügern\t[2]\nLöschen\t\t[3]\nVerdoppeln\t[4]\nHalbieren\t[5]");
+                
+                Console.Write("Was wollen Sie mit dem Array tun?\nSpeichern\t[1]\nEinfügen\t[2]\nLöschen\t\t[3]\nVerdoppeln\t[4]\nHalbieren\t[5]\nAnzeigen\t[6]\n\nEingabe: ");
                 switch (Console.ReadLine())
                 {
                     
@@ -111,14 +124,15 @@ namespace BFW_Uebungen_Semester_1
                             Halbieren(ref array1, platz);
                         break;
 
+                    case "6":
+                            Anzeigen(ref array1);
+                        break;
+
                     default:
                         break;
 
                 }
-                Console.WriteLine();
-                foreach (int i in array1)
-                    Console.WriteLine("Array[{0}]: {1}", arrayplatzausgabe++, i);
-                Console.WriteLine();
+
 
             }
         }

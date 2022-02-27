@@ -4,21 +4,21 @@ using System.Text;
 
 namespace Weitere_Übungsaufgaben
 {
-    class Aufgabe_B2a
+    class Aufgabe_B2b
     {
 
         public static void Start()
         {
 
             Console.WriteLine("Eingabe:");
-            string eingabe = Console.ReadLine();
+            string eingabe = Console.ReadLine().Trim();
             string verkuerzteeingabe = "";
             int anzahl = 0;
             int i;
 
             try
             {
-                if (eingabe.Length > 0 && eingabe[0] != '%')
+                if (eingabe.Length > 0 && !(eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out int useless)))
                 {
 
                     for (i = 1; i < eingabe.Length; i++)
@@ -31,7 +31,7 @@ namespace Weitere_Übungsaufgaben
                         {
 
                             anzahl++;
-                            if (eingabe[i-1] == '%')
+                            if (eingabe[i - 1] == '%' || eingabe[i - 1] == '\\')
                                 verkuerzteeingabe += "%" + anzahl + "%\\" + eingabe.Substring(i - 1, 1);
                             else
                                 verkuerzteeingabe += "%" + anzahl + "%" + eingabe.Substring(i - 1, 1);
@@ -47,9 +47,8 @@ namespace Weitere_Übungsaufgaben
                     verkuerzteeingabe += "%" + anzahl + "%" + eingabe.Substring(i - 1, 1) + "%";
                     Console.WriteLine("Verkürzte Form: " + verkuerzteeingabe);
                 }
-                else if (eingabe.Length > 0  && eingabe[0] == '%')
+                else if (eingabe.Length > 0 && (eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out useless)))
                 {
-
 
                     string ausgabe = "";
                     bool zahl = true;
@@ -75,6 +74,13 @@ namespace Weitere_Übungsaufgaben
                         }
                         else
                         {
+                        if (eingabe.Substring(j, 1) == "\\")
+                        {
+                            for (int k = 0; k < tempAnzahlZahl; k++)
+                                ausgabe += eingabe.Substring(j + 1, 1);
+                            j++;
+                        }
+                        else
                             for (int k = 0; k < tempAnzahlZahl; k++)
                                 ausgabe += eingabe.Substring(j, 1);
 
@@ -90,11 +96,11 @@ namespace Weitere_Übungsaufgaben
                 Console.WriteLine("Tschüss!");
 
             }
-            catch 
+            catch
             {
                 Console.WriteLine("Ungültige Angabe! Bitte halten Sie die Regeln für die verkürzte oder verlängerte Form ein!");
             }
-           
+
         }
     }
 }
