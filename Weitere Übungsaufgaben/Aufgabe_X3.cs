@@ -6,12 +6,127 @@ namespace Weitere_Übungsaufgaben
 {
     class Aufgabe_X3
     {
+
+        public static void ArrayExpand(ref int[] array)
+        {
+            int[] tempArr = new int[array.Length + 1];
+                    for (int i = 0; i < array.Length; i++)
+                        tempArr[i] = array[i];
+                    array = tempArr;
+        }
+
+
         public static void Start()
         {
-            int a = 2;
+            int eingabe;
+            int zahlenfolgeaufzaehlung = 0;
+            int aufzaehlunginreversed = 0;
+            int aufzahlunginmirpprimzahlen = 0;
+            int temppppp = 0;
+
+            do
+                Console.WriteLine("Bitte geben Sie eine positive Zahl ein:");
+            while (!int.TryParse(Console.ReadLine(), out eingabe) || eingabe < 1);
+
+            int[] zahlenfolge = new int[0];
+            int[] primzahlen = new int[0];
+            int[] primzahlenreversed = new int[0];
+            int[] tempmirprimzahlen = new int[0];
+            
+
+            do
+            {
+                do
+                {
+
+                    ArrayExpand(ref zahlenfolge);
+                    zahlenfolge[zahlenfolgeaufzaehlung] = ++zahlenfolgeaufzaehlung + 1;
+
+                    foreach (int i in zahlenfolge)
+                    {
+
+                        bool nichtprimzahl = false;
+
+                        foreach (int j in primzahlen)
+                        {
+                            if (i % j == 0)
+                            {
+                                nichtprimzahl = true;
+                                break;
+                            }
+                        }
+
+                        if (!nichtprimzahl)
+                        {
+                            ArrayExpand(ref primzahlen);
+                            primzahlen[primzahlen.Length - 1] = i;
+
+                            
+                            string tempk = primzahlen[primzahlen.Length - 1].ToString();
+                            string tempk2 = "";
+                            for (int j = 1; j <= tempk.Length; j++)
+                                tempk2 += tempk.Substring(tempk.Length - j, 1);
+                            int tempkINT = Convert.ToInt32(tempk2);
+                            if (i != tempkINT)
+                            {
+                                ArrayExpand(ref primzahlenreversed);
+                                primzahlenreversed[primzahlenreversed.Length - 1] = tempkINT;
+                            }
+                        }
+                    }
+                } while (primzahlenreversed.Length < 1 || primzahlenreversed[aufzaehlunginreversed] > primzahlen[primzahlen.Length - 1]);
+
+                ++aufzaehlunginreversed;
+                
+                foreach (int i in primzahlenreversed)
+                {
+                    
+                    foreach (int j in primzahlen)
+                    {
+                        if (i == j)
+                        {
+                            ArrayExpand(ref tempmirprimzahlen);
+                            tempmirprimzahlen[temppppp] = j;
+                            temppppp++;
+                        }
+                    }
+                }
+
+            } while(tempmirprimzahlen.Length <= eingabe);
+
+            int[] mirprimzahlen = new int[eingabe];
+
+            Array.Sort(tempmirprimzahlen);
+            Console.WriteLine(tempmirprimzahlen[0]);
+            int endcount = 0;
+            int mirparraycount = 0;
+            do
+            {
+
+  
+                if (endcount > 0 && endcount < tempmirprimzahlen.Length -1 && (tempmirprimzahlen[endcount]) != tempmirprimzahlen[endcount - 1])
+                {
+
+                    mirprimzahlen[mirparraycount] = tempmirprimzahlen[endcount];
+                    Console.WriteLine(tempmirprimzahlen[mirparraycount]);
+                    mirparraycount++;
+                   
+                }
+                endcount++;
+            } while (mirprimzahlen[eingabe - 1] == 0);
+
+                
+
+
+
+
+
+            /*int a = 2;
             int i = 0;
             int z = 0;
             int y = 0;
+            int vergleich1 = 0;
+            int vergleich2 = 0;
             int l;
             int x;
 
@@ -25,7 +140,7 @@ namespace Weitere_Übungsaufgaben
             int[] primzahlenrueckwaerts = new int[1];
             int[] mirpprimzahlen = new int[0];
 
-            while (primzahlenrueckwaerts.Length < x)
+            do //(primzahlenrueckwaerts.Length < x)
             {
                 do
                 {
@@ -76,14 +191,15 @@ namespace Weitere_Übungsaufgaben
                 for (int j = 1; j <= tempk.Length; j++)
                     tempk2 += tempk.Substring(tempk.Length - j, 1);
                 l = Convert.ToInt32(tempk2);
-                primzahlenrueckwaerts[primzahlenrueckwaerts.Length - 1] = l;
+                if (k != l)
+                    primzahlenrueckwaerts[primzahlenrueckwaerts.Length - 1] = l;
 
-            }
+            } while (primzahlenrueckwaerts[vergleich1] > primzahlen[primzahlen.Length - 1]);
 
             /*foreach (int y in zahlenfolge)
                 Console.Write(y + " ");
 
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             Console.WriteLine("\nBerechnete Primzahlen rückwärts:");
 
@@ -92,7 +208,7 @@ namespace Weitere_Übungsaufgaben
 
             foreach (int ende in primzahlenrueckwaerts)
                 Console.Write(ende + " ");
-
+            */
         }
     }
 }
