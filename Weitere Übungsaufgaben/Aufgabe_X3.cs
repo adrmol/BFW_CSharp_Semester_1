@@ -63,12 +63,13 @@ namespace Weitere_Übungsaufgaben
         public bool TestaufPrimzahl(int zahl)
         {
             foreach (int i in primzahlen)
+            {
+                if (i * i <= zahl)
                 {
                     if (zahl % i == 0)
-                    {
                         return false;
-                    }
-                }
+                } 
+            }
             return true;
         }
 
@@ -142,8 +143,8 @@ namespace Weitere_Übungsaufgaben
 
                         if (IstZahlInPrimzahlVorhanden(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]))
                         {
-                            ArrayExpand(ref mirprimzahlen);
-                            mirprimzahlen[mirpirmzahlenaufzaehlung] = ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]);
+                            //ArrayExpand(ref mirprimzahlen);
+                            Console.WriteLine(ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
                             mirpirmzahlenaufzaehlung++;
                         }
 
@@ -161,12 +162,12 @@ namespace Weitere_Übungsaufgaben
                 
             } while (mirpirmzahlenaufzaehlung < eingabeuser);
 
-            Console.WriteLine("\n{0} Mirpzahlen:", eingabeuser);
+            //Console.WriteLine("\n{0} Mirpzahlen:", eingabeuser);
 
             //Ausgabe aller Mirpzahlen
 
-            foreach (int i in mirprimzahlen)
-                Console.WriteLine("{0}. {1}", stellemirpzahl++ ,i);
+            //foreach (int i in mirprimzahlen)
+            //   Console.WriteLine("{0}. {1}", stellemirpzahl++ ,i);
         }
     }
 }
