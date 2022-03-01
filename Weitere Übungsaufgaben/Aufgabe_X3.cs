@@ -22,10 +22,13 @@ namespace Weitere_Übungsaufgaben
 
         public void ArrayExpand(ref int[] array)
         {
-            int[] tempArr = new int[array.Length + 1];
-            for (int i = 0; i < array.Length; i++)
-                tempArr[i] = array[i];
-            array = tempArr;
+            /*
+             * int[] tempArr = new int[array.Length + 1];
+             * for (int i = 0; i < array.Length; i++)
+             *   tempArr[i] = array[i];
+             * array = tempArr;
+             */
+            Array.Resize(ref array, array.Length + 1);
         }
 
         public void PrimzahlenExpandZuZahl(int bisZahl)
@@ -105,8 +108,6 @@ namespace Weitere_Übungsaufgaben
             do
                 Console.WriteLine("Bitte geben Sie an, wie viele Mirpzahlen ausgegeben werden:");
             while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
-
-            PrimzahlenExpandZuZahl(13);
 
             do
             {
