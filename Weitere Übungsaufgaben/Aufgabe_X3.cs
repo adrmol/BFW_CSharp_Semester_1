@@ -103,7 +103,7 @@ namespace Weitere_Übungsaufgaben
             int eingabeuser;
 
             do
-                Console.WriteLine("Bitte geben Sie eine positive Zahl ein:");
+                Console.WriteLine("Bitte geben Sie an, wie viele Mirpzahlen ausgegeben werden:");
             while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
 
             PrimzahlenExpandZuZahl(13);
