@@ -10,14 +10,14 @@ namespace Weitere_Übungsaufgaben
         int[] primzahlen = new int[1] {2};
         int[] zahlenfolge = new int[0];
         int[] primzahlenrueckwaerts = new int[0];
-        int[] mirprimzahlen = new int[0];
+        //int[] mirprimzahlen = new int[0];
 
         int zahlenfolgegroeße = 2;
         int primzahlengroeße = 1;
         int primzahlaufzaehlung = 1;
         int primzahlenrueckwaertsaufzaehlung = 0;
         int mirpirmzahlenaufzaehlung = 0;
-        int stellemirpzahl = 1;
+        //int stellemirpzahl = 1;
 
 
         public void ArrayExpand(ref int[] array)
@@ -107,8 +107,10 @@ namespace Weitere_Übungsaufgaben
             int eingabeuser;
 
             do
-                Console.WriteLine("Bitte geben Sie an, wie viele Mirpzahlen ausgegeben werden:");
-            while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
+                Console.WriteLine("Bitte geben Sie an, wie viele Mirpzahlen ausgegeben werden: (bitte kleiner als 1646 eingeben)");
+            while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1 || eingabeuser > 1646);
+
+            Console.WriteLine("\n{0} Mirpzahlen:", eingabeuser);
 
             do
             {
@@ -144,8 +146,8 @@ namespace Weitere_Übungsaufgaben
                         if (IstZahlInPrimzahlVorhanden(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]))
                         {
                             //ArrayExpand(ref mirprimzahlen);
-                            Console.WriteLine(ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
-                            mirpirmzahlenaufzaehlung++;
+                            Console.WriteLine("{0}. {1}", ++mirpirmzahlenaufzaehlung, ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
+
                         }
 
                         // Wenn er nicht Teil ist, dann geht die Schleife von vorne los und die nächste PrimzahlRueckwaerts wird generiert und geprüft

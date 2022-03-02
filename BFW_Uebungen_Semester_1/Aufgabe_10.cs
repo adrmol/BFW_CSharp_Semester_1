@@ -25,8 +25,7 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine("Erster Buchstabe: " + str2[0]);
 
             //Letzten Buchstaben in Groß ausgeben.
-            string str3 = str1.ToUpper();
-            Console.WriteLine("Letzter Buchstabe: " + str3[a-1]);
+            Console.WriteLine("Letzter Buchstabe: " + str2[a-1]);
 
         }
     }

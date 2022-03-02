@@ -27,7 +27,7 @@ namespace BFW_Uebungen_Semester_1
             }
 
             //Array wird auf 6 erweitert
-            //Array.Resize(ref intarray1, 6); <- geht vielleicht, ist aber nicht im Skript.
+            //Array.Resize(ref intarray1, 6); - nicht im Skript.
             //Arrays erweitern: Skript Seite 145
             int[] tempArr = new int[intarray1.Length + 2]; //Die "2" gibt an dass die neue Länge um 2 größer ist.
             for (int i = 0; i < intarray1.Length; i++)
