@@ -10,14 +10,14 @@ namespace Weitere_Übungsaufgaben
         int[] primzahlen = new int[1] {2};
         int[] zahlenfolge = new int[0];
         int[] primzahlenrueckwaerts = new int[0];
-        int[] mirprimzahlen = new int[0];
+        //int[] mirprimzahlen = new int[0];
 
         int zahlenfolgegroeße = 2;
         int primzahlengroeße = 1;
         int primzahlaufzaehlung = 1;
         int primzahlenrueckwaertsaufzaehlung = 0;
         int mirpirmzahlenaufzaehlung = 0;
-        int stellemirpzahl = 1;
+        //int stellemirpzahl = 1;
 
 
         public void ArrayExpand(ref int[] array)

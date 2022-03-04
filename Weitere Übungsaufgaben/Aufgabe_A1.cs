@@ -19,7 +19,7 @@ namespace Weitere_Übungsaufgaben
             do
             {
                 
-                farbe1 = Console.ReadLine().ToLower();  //Farbe wird in kleinbuchstaben gespeichert.
+                farbe1 = Console.ReadLine().Trim().ToLower();  //Farbe wird in kleinbuchstaben gespeichert. Führende und folgende Leerzeichen werden entfernt.
                 farbefalsch = !(farbe1 == "blau" | farbe1 == "gelb" | farbe1 == "rot"); //Test ob die Eingabe einer Grundfarbe enspricht.
                 if (farbefalsch == true)
                     Console.WriteLine("Bitte geben Sie eine korrekte Grundfarbe an:");  //Falls keine korrekte Farbe eingeben wurde, wird nochmal gefragt.
@@ -33,30 +33,36 @@ namespace Weitere_Übungsaufgaben
             do
             {
 
-                farbe2 = Console.ReadLine().ToLower();  //Farbe wird in kleinbuchstaben gespeichert.
-                farbefalsch = !(farbe2 == "blau" | farbe2 == "gelb" | farbe2 == "rot" & farbe2 != farbe1); //Test ob die Eingabe einer Grundfarbe enspricht und nicht die erste Farbe ist.
+                farbe2 = Console.ReadLine().Trim().ToLower();  //Farbe wird in kleinbuchstaben gespeichert. Führende und folgende Leerzeichen werden entfernt.
+                farbefalsch = !(farbe2 == "blau" | farbe2 == "gelb" | farbe2 == "rot"); //Test ob die Eingabe einer Grundfarbe enspricht.
                 if (farbefalsch == true)
-                    Console.WriteLine("Bitte geben Sie eine korrekte zweite oder andere zweite Grundfarbe an:");    //Falls keine korrekte Farbe eingeben wurde, wird nochmal gefragt.
+                    Console.WriteLine("Bitte geben Sie eine korrekte zweite Grundfarbe an:");    //Falls keine korrekte Farbe eingeben wurde, wird nochmal gefragt.
 
             }
             while (farbefalsch);
 
-
-            //Es wird auf die Kombination getestet und die jeweils richtige Mischfarbe ausgeben.
-            if (farbe1 == "blau" | farbe2 == "blau")
+            if (farbe1 == farbe2) //Wenn beide Farben gleich sind ist die Mischfarbe einfach die gleiche die eingegeben wurde.
             {
-                if (farbe1 == "gelb" | farbe2 == "gelb")
-                {
-                    Console.WriteLine("{0} + {1} = grün", farbe1, farbe2);
-                }
-                else
-                {
-                    Console.WriteLine("{0} + {1} = lila", farbe1, farbe2);
-                }
+                    Console.WriteLine("{0} + {1} = {2}", farbe1, farbe2, farbe1);
             }
             else
             {
-                Console.WriteLine("{0} + {1} = orange", farbe1, farbe2);
+                //Es wird auf die Kombination getestet und die jeweils richtige Mischfarbe ausgeben.
+                if (farbe1 == "blau" | farbe2 == "blau")    //Wenn eine der Farben blau ist, dann kann es nur noch lila oder grün sein.
+                {
+                    if (farbe1 == "gelb" | farbe2 == "gelb")    //Dieser Code wird nur ausgeführt wenn eine der Farben schon blau ist, dann müssen wir nur noch schauen ob die andere Farbe gleb oder rot ist.
+                    {
+                        Console.WriteLine("{0} + {1} = grün", farbe1, farbe2); //Wenn die zweite Farbe gelb ist dann kommt grün raus.
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} + {1} = lila", farbe1, farbe2); //Wenn die zweite Farbe rot ist dann kommt lila raus.
+                    }
+                }
+                else //Wenn keine der eingegebenen Farben blau ist, dann muss orange rauskommen.
+                {
+                    Console.WriteLine("{0} + {1} = orange", farbe1, farbe2);
+                }
             }
 
         }
