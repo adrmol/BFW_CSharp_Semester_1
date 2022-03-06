@@ -144,7 +144,7 @@ namespace Weitere_Übungsaufgaben
                         if (IstZahlInPrimzahlVorhanden(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]))
                         {
                             //ArrayExpand(ref mirprimzahlen);
-                            Console.WriteLine(ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
+                            Console.WriteLine("{0}. {1}", mirpirmzahlenaufzaehlung, ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
                             mirpirmzahlenaufzaehlung++;
                         }
 
