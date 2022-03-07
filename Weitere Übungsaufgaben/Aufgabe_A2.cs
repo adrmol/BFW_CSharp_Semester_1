@@ -11,6 +11,7 @@ namespace Weitere_Übungsaufgaben
         {
 
             Console.WriteLine("Geben Sie eine Fallhöhe in m ein:");
+
             double fallhoehe;
             double anzahl = 0;
 
@@ -19,14 +20,11 @@ namespace Weitere_Übungsaufgaben
 
             while (fallhoehe > 0.01)
             {
-
                 fallhoehe /= 2;
                 anzahl++;
-
             }
 
             Console.WriteLine("\nDie Anzahl der Sprünge: " + anzahl);
-
         }
     }
 }
