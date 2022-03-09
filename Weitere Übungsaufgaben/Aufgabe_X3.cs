@@ -146,8 +146,8 @@ namespace Weitere_Übungsaufgaben
                         if (IstZahlInPrimzahlVorhanden(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]))
                         {
                             //ArrayExpand(ref mirprimzahlen);
-                            Console.WriteLine("{0}. {1}", ++mirpirmzahlenaufzaehlung, ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
-
+                            Console.WriteLine("{0}. {1}", mirpirmzahlenaufzaehlung, ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
+                            mirpirmzahlenaufzaehlung++;
                         }
 
                         // Wenn er nicht Teil ist, dann geht die Schleife von vorne los und die nächste PrimzahlRueckwaerts wird generiert und geprüft
