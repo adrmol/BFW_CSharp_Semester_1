@@ -10,9 +10,6 @@ namespace Weitere_Übungsaufgaben
         {
 
             int[] array1 = new int[0];
-            int inteingabe;
-            int i = 0;
-
             Console.Clear();
 
             do
@@ -21,13 +18,13 @@ namespace Weitere_Übungsaufgaben
                 string eingabe = Console.ReadLine().Trim().ToLower();
                 if (eingabe == "ende")
                     break;
-                if (!int.TryParse(eingabe, out inteingabe))
+                if (!int.TryParse(eingabe, out int inteingabe))
                     continue;
                 Array.Resize(ref array1, array1.Length + 1);
 
                 array1[array1.Length - 1] = int.MaxValue;
 
-                for (i = 0; i < array1.Length; i++)
+                for (int i = 0; i < array1.Length; i++)
                 {
                     if (array1[i] > inteingabe && array1[i] != int.MaxValue)
                     {
