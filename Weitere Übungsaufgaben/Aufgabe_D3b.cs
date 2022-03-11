@@ -25,12 +25,14 @@ namespace Weitere_Übungsaufgaben
                 Array.Resize(ref array1, array1.Length + 1);
                 array1[i++] = inteingabe;
                 Console.Clear();
+                Console.WriteLine("Unsortiert: ");
+
+                foreach (int ausgabe in array1)
+                    Console.Write(ausgabe + " ");
+                Console.WriteLine("");
             } while (true);
 
-            Console.WriteLine("Unsortiert: ");
-
-            foreach (int ausgabe in array1)
-                Console.Write(ausgabe + " ");
+            
 
             //bubblesort
             bool a;
