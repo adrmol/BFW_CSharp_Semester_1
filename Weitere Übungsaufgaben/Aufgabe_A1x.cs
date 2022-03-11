@@ -22,7 +22,7 @@ namespace Weitere_Übungsaufgaben
             {
 
                 farbe1 = Console.ReadLine().Trim().ToLower();                                   //Farbe wird in Kleinbuchstaben gespeichert. Führende und folgende Leerzeichen werden entfernt.
-                farbefalsch = (farbe1 != "blau" & farbe1 != "gelb" & farbe1 != "rot");          //Test ob die Eingabe einer Grundfarbe enspricht.
+                farbefalsch = (farbe1 != "blau" && farbe1 != "gelb" && farbe1 != "rot");          //Test ob die Eingabe einer Grundfarbe enspricht.
                 if (farbefalsch == true)
                     Console.WriteLine("Bitte geben Sie eine korrekte Grundfarbe an:");          //Falls keine korrekte Farbe eingeben wurde, wird nochmal gefragt.
 
@@ -37,7 +37,7 @@ namespace Weitere_Übungsaufgaben
             {
 
                 farbe2 = Console.ReadLine().Trim().ToLower();                                    //Farbe wird in Kleinbuchstaben gespeichert. Führende und folgende Leerzeichen werden entfernt.
-                farbefalsch = (farbe2 != "blau" & farbe2 != "gelb" & farbe2 != "rot");           //Test ob die Eingabe einer Grundfarbe enspricht.
+                farbefalsch = (farbe2 != "blau" && farbe2 != "gelb" && farbe2 != "rot");           //Test ob die Eingabe einer Grundfarbe enspricht.
                 if (farbefalsch == true)
                     Console.WriteLine("Bitte geben Sie eine korrekte zweite Grundfarbe an:");    //Falls keine korrekte Farbe eingeben wurde, wird nochmal gefragt.
 

@@ -20,11 +20,16 @@ namespace BFW_Uebungen_Semester_1
                 if (num % 2 == 0)
                 {
 
-                    Console.WriteLine("Der eingegebene Wert \u0022{0}\u0022 ist eine Zahl und die Hälfte ist {1}.", num, num / 2);
+                    Console.WriteLine("Der eingegebene Wert \"{0}\" ist eine Zahl und die Hälfte ist {1}.", 
+                        num, 
+                        num / 2);
                 
                 } else {
 
-                    Console.WriteLine("Der eingegebene Wert \u0022{0}\u0022 ist eine Zahl und die Hälfte ist {1} mit dem Rest {2}.", num, num / 2, num % 2);
+                    Console.WriteLine("Der eingegebene Wert \"{0}\" ist eine Zahl und die Hälfte ist {1} mit dem Rest {2}.", 
+                        num, 
+                        num / 2, 
+                        num % 2);
                 
                 }
 
@@ -36,11 +41,18 @@ namespace BFW_Uebungen_Semester_1
                 if (input1.Length % 2 == 0)
                 {
 
-                    Console.WriteLine("Der eingegebene Wert \u0022{0}\u0022 ist ein String und die Hälfte ist \u0022{1}\u0022 und \u0022{2}\u0022.", input1, input1.Substring(0, input1.Length / 2), input1.Substring(input1.Length / 2, input1.Length / 2));
+                    Console.WriteLine("Der eingegebene Wert \"{0}\" ist ein String und die Hälfte ist \"{1}\" und \"{2}\".", 
+                        input1, 
+                        input1.Substring(0, input1.Length / 2), 
+                        input1.Substring(input1.Length / 2, input1.Length / 2));
 
                 } else {
 
-                    Console.WriteLine("Der eingegebene Wert \u0022{0}\u0022 ist ein String und die Hälfte ist \u0022{1}\u0022 und \u0022{2}\u0022 mit dem mittleren Buchstaben \u0022{3}\u0022.",input1, input1.Substring(0, input1.Length / 2), input1.Substring(input1.Length / 2 + 1, input1.Length / 2), input1.Substring(input1.Length / 2, 1));
+                    Console.WriteLine("Der eingegebene Wert \"{0}\" ist ein String und die Hälfte ist \"{1}\" und \"{2}\" mit dem mittleren Buchstaben \"{3}\".",
+                        input1, 
+                        input1.Substring(0, input1.Length / 2), 
+                        input1.Substring(input1.Length / 2 + 1, 
+                        input1.Length / 2), input1.Substring(input1.Length / 2, 1));
 
                 }
                 

@@ -62,8 +62,8 @@ namespace Weitere_Übungsaufgaben
 
         public void Start()
         {
-
-            while (true)
+            bool ende = true; 
+            while (ende)
             {
 
                 Console.WriteLine();
@@ -99,7 +99,7 @@ namespace Weitere_Übungsaufgaben
                         break;
 
                     default:
-                        Environment.Exit(0);
+                        ende = false;
                         break;
 
                 }
