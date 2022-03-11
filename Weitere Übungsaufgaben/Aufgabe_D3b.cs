@@ -27,6 +27,11 @@ namespace Weitere_Übungsaufgaben
                 Console.Clear();
             } while (true);
 
+            Console.WriteLine("Unsortiert: ");
+
+            foreach (int ausgabe in array1)
+                Console.Write(ausgabe + " ");
+
             //bubblesort
             bool a;
             do
@@ -43,6 +48,11 @@ namespace Weitere_Übungsaufgaben
                     }
                 }
             } while (a);
+
+            Console.WriteLine("\nSortiert: ");
+
+            foreach (int ausgabe in array1)
+                Console.Write(ausgabe + " ");
         }
     }
 }
