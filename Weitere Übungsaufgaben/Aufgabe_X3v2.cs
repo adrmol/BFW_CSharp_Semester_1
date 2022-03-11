@@ -4,28 +4,31 @@ using System.Text;
 
 namespace Weitere_Übungsaufgaben
 {
-    class Aufgabe_X3
+    class Aufgabe_X3v2
     {
 
-        int[] primzahlen = new int[1] { 2 };
+        int[] primzahlen = new int[1] {2};
         int[] zahlenfolge = new int[0];
         int[] primzahlenrueckwaerts = new int[0];
-        int[] mirprimzahlen = new int[0];
+        //int[] mirprimzahlen = new int[0];
 
         int zahlenfolgegroeße = 2;
         int primzahlengroeße = 1;
         int primzahlaufzaehlung = 1;
         int primzahlenrueckwaertsaufzaehlung = 0;
         int mirpirmzahlenaufzaehlung = 0;
-        int stellemirpzahl = 1;
+        //int stellemirpzahl = 1;
 
 
         public void ArrayExpand(ref int[] array)
         {
-            int[] tempArr = new int[array.Length + 1];
-            for (int i = 0; i < array.Length; i++)
-                tempArr[i] = array[i];
-            array = tempArr;
+            /*
+             * int[] tempArr = new int[array.Length + 1];
+             * for (int i = 0; i < array.Length; i++)
+             *   tempArr[i] = array[i];
+             * array = tempArr;
+             */
+            Array.Resize(ref array, array.Length + 1);
         }
 
         public void PrimzahlenExpandZuZahl(int bisZahl)
@@ -33,7 +36,7 @@ namespace Weitere_Übungsaufgaben
             do
             {
                 ZahlenfolgeExpand();
-                if (TestaufPrimzahl(zahlenfolge[zahlenfolgegroeße - 3]))
+                if (TestaufPrimzahl(zahlenfolge[zahlenfolgegroeße-3]))
                 {
                     ArrayExpand(ref primzahlen);
                     primzahlen[primzahlengroeße] = zahlenfolge[zahlenfolgegroeße - 3];
@@ -61,15 +64,16 @@ namespace Weitere_Übungsaufgaben
         {
             foreach (int i in primzahlen)
             {
-                if (zahl % i == 0)
+                if (i * i <= zahl)
                 {
-                    return false;
-                }
+                    if (zahl % i == 0)
+                        return false;
+                } 
             }
             return true;
         }
 
-        public bool IstZahlInPrimzahlVorhanden(int zahl)
+        public bool IstZahlInPrimzahlVorhanden (int zahl)
         {
             foreach (int i in primzahlen)
             {
@@ -103,10 +107,8 @@ namespace Weitere_Übungsaufgaben
             int eingabeuser;
 
             do
-                Console.WriteLine("Bitte geben Sie eine positive Zahl ein:");
+                Console.WriteLine("Bitte geben Sie an, wie viele Mirpzahlen ausgegeben werden:");
             while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
-
-            PrimzahlenExpandZuZahl(13);
 
             do
             {
@@ -141,8 +143,8 @@ namespace Weitere_Übungsaufgaben
 
                         if (IstZahlInPrimzahlVorhanden(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]))
                         {
-                            ArrayExpand(ref mirprimzahlen);
-                            mirprimzahlen[mirpirmzahlenaufzaehlung] = ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]);
+                            //ArrayExpand(ref mirprimzahlen);
+                            Console.WriteLine("{0}. {1}", mirpirmzahlenaufzaehlung + 1, ReverseZahl(primzahlenrueckwaerts[primzahlenrueckwaertsaufzaehlung - 1]));
                             mirpirmzahlenaufzaehlung++;
                         }
 
@@ -152,26 +154,25 @@ namespace Weitere_Übungsaufgaben
 
                     primzahlaufzaehlung++;
 
-                }
-                else
+                } else
                 {
                     primzahlaufzaehlung++;
                 }
 
-
+                
             } while (mirpirmzahlenaufzaehlung < eingabeuser);
 
-            Console.WriteLine("\n{0} Mirpzahlen:", eingabeuser);
+            //Console.WriteLine("\n{0} Mirpzahlen:", eingabeuser);
 
             //Ausgabe aller Mirpzahlen
 
-            foreach (int i in mirprimzahlen)
-                Console.WriteLine("{0}. {1}", stellemirpzahl++, i);
+            //foreach (int i in mirprimzahlen)
+            //   Console.WriteLine("{0}. {1}", stellemirpzahl++ ,i);
         }
     }
 }
 
-
+                
 
 
 
