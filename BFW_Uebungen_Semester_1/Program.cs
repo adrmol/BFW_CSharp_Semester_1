@@ -8,7 +8,7 @@ namespace BFW_Uebungen_Semester_1
         {
             while(true)
             {
-                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15b, 17, 18, 19, 19b, 20, 21, 22, 23, 24];\nProgramm schließen: exit");
+                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15b, 16, 17, 18, 19, 19b, 20, 21, 22, 23, 24];\nProgramm schließen: exit");
                 switch (Console.ReadLine())
                 {
 
@@ -70,6 +70,11 @@ namespace BFW_Uebungen_Semester_1
                     case "15b":
                         Console.WriteLine("Aufgabe 15b:\n");
                         Aufgabe_15b.Start();
+                        break;
+
+                    case "16":
+                        Console.WriteLine("Aufgabe 16:\n");
+                        Aufgabe_16.Start();
                         break;
 
                     case "17":

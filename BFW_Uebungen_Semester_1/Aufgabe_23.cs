@@ -25,15 +25,15 @@ namespace BFW_Uebungen_Semester_1
                     string tempinput1 = "";
                     for (int i = 0; i < input1.Length; i++)
                     {
-                        if (input1.Substring(i, 1) != "a" &
-                            input1.Substring(i, 1) != "e" &
-                            input1.Substring(i, 1) != "i" &
-                            input1.Substring(i, 1) != "o" &
-                            input1.Substring(i, 1) != "u" &
-                            input1.Substring(i, 1) != "A" &
-                            input1.Substring(i, 1) != "E" &
-                            input1.Substring(i, 1) != "I" &
-                            input1.Substring(i, 1) != "O" &
+                        if (input1.Substring(i, 1) != "a" &&
+                            input1.Substring(i, 1) != "e" &&
+                            input1.Substring(i, 1) != "i" &&
+                            input1.Substring(i, 1) != "o" &&
+                            input1.Substring(i, 1) != "u" &&
+                            input1.Substring(i, 1) != "A" &&
+                            input1.Substring(i, 1) != "E" &&
+                            input1.Substring(i, 1) != "I" &&
+                            input1.Substring(i, 1) != "O" &&
                             input1.Substring(i, 1) != "U")
                         {
                             tempinput1 += input1.Substring(i, 1);
@@ -46,9 +46,9 @@ namespace BFW_Uebungen_Semester_1
                         tempinput1 = "";
                         for (int i = 0; i < input1.Length; i++)
                         {
-                            if (input1.Substring(i, 1) != "s" &
-                                input1.Substring(i, 1) != "t" &
-                                input1.Substring(i, 1) != "S" &
+                            if (input1.Substring(i, 1) != "s" &&
+                                input1.Substring(i, 1) != "t" &&
+                                input1.Substring(i, 1) != "S" &&
                                 input1.Substring(i, 1) != "T")
                             {
                                 tempinput1 += input1.Substring(i, 1);

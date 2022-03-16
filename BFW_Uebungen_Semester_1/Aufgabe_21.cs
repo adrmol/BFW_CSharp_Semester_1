@@ -24,13 +24,11 @@ namespace BFW_Uebungen_Semester_1
                 //falls eine Zahl korrekt eingegeben wurde, wird das Array um eins erweitert und die Eingabe an letzter Stelle gespeichert.
                 if (int.TryParse(Console.ReadLine(), out int input))
                 {
-                    int i = 0;
                     int[] tempArr = new int[array.Length + 1];
-                    for (int j = 0; j < array.Length; j++)
-                        tempArr[j] = array[j];
+                    for (int i = 0; i < array.Length; i++)
+                        tempArr[i] = array[i];
                     array = tempArr;
-                    array[i] = input;
-                    i++;
+                    array[^1] = input;
 
                 }
 

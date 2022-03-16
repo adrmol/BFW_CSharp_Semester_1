@@ -17,7 +17,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Einfuegen(ref int[] array, int input, int platz)
         {
-            if (platz < array.Length && platz > 0)
+            if (platz <= array.Length + 1 && platz > 0)
             {
                 int[] tempArr = new int[array.Length + 1];
 
@@ -36,11 +36,11 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Loeschen(ref int[] array, int platz)
         {
-            if (platz < array.Length && platz > 0)
+            if (platz <= array.Length && platz > 0)
             {
                 int[] tempArr = new int[array.Length - 1];
 
-                for (int j = 0; j < platz; j++)
+                for (int j = 0; j < platz- 1; j++)
                     tempArr[j] = array[j];
 
                 for (int j = platz - 1; j < tempArr.Length; j++)
@@ -53,7 +53,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Verdoppeln(ref int[] array, int platz)
         {
-            if (platz < array.Length && platz > 0)
+            if (platz <= array.Length && platz > 0)
                 array[platz - 1] *= 2;
             else
                 Console.WriteLine("\nPlatz nicht vorhanden!\n");
@@ -61,7 +61,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Halbieren(ref int[] array, int platz)
         {
-            if (platz < array.Length && platz > 0)
+            if (platz <= array.Length && platz > 0)
                 array[platz - 1] /= 2;
             else
                 Console.WriteLine("\nPlatz nicht vorhanden!\n");

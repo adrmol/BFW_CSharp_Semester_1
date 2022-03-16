@@ -19,24 +19,23 @@ namespace BFW_Uebungen_Semester_1
             string input2 = input1.Trim().ToLower();
 
             //Drei Begrüßungen bekannt: hi, hey, hallo.
-            switch(input2)
+            switch (input2)
             {
                 case "hi":
-                    Console.WriteLine("Hey!\nDie Begrüßung \u0022" + input1 + "\u0022 kenne ich! :D");
+                    Console.WriteLine("Hey!\nDie Begrüßung \'" + input1 + "\' kenne ich! :D");
                     break;
 
                 case "hey":
-                    Console.WriteLine("Hallo!\nDie Begrüßung \u0022" + input1 + "\u0022 kenne ich! :D");
+                    Console.WriteLine("Hallo!\nDie Begrüßung \'" + input1 + "\' kenne ich! :D");
                     break;
 
                 case "hallo":
-                    Console.WriteLine("Hi!\nDie Begrüßung \u0022" + input1 + "\u0022 kenne ich! :D");
+                    Console.WriteLine("Hi!\nDie Begrüßung \'" + input1 + "\' kenne ich! :D");
                     break;
 
                 default:
                     Console.WriteLine("Hi!\nLeider kenne ich die Begrüßung nicht! :(");
                     break;
-
             }
         }
     }

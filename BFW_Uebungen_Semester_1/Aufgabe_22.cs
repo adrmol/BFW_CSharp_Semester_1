@@ -6,7 +6,6 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_22
     {
-
         public static void Start()
         {
             Console.WriteLine("Bitte Zahlen eingeben und mit Enter bestätigen:");

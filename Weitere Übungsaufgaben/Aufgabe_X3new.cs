@@ -35,7 +35,8 @@ namespace Weitere_Übungsaufgaben
             {
                 notprime = new bool[2147483000];
                 primecount = 4809260;
-                eingabeuser = 4809260;
+                if (eingabeuser > 4809260)
+                    eingabeuser = 4809260;
             }
             else
                 notprime = new bool[primecount + 1];
@@ -61,7 +62,7 @@ namespace Weitere_Übungsaufgaben
                 {
                     long rev = Reverse(primenumber);
                     if (primenumber != rev && !notprime[rev])
-                        Console.WriteLine("{0}. {1}", anzahl++, primenumber);
+                        Console.Write("{0}. {1} ", anzahl++, primenumber);
                 } 
 
                 primenumber++;
