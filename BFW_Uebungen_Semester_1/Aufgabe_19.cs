@@ -7,9 +7,11 @@ namespace BFW_Uebungen_Semester_1
     class Aufgabe_19
     {
         public static void Start()
-        {
+        {   
+            
             //Array mit Größe 5.
-            int[] array1 = new int[5];
+            int arraylaenge = 5;
+            int[] array1 = new int[arraylaenge];
 
             //if Kurzschreibweise.
             //Wenn "int.TryParse(Console.ReadLine())" true ist, d.h. die Eingabe lässt sich in eine Zahl umwandeln (int),
@@ -18,7 +20,7 @@ namespace BFW_Uebungen_Semester_1
             //Wenn "int.TryParse(Console.ReadLine())" false ist, dann bleibt "num" leer und es wird -1 zurückgegeben.
             //      (nach dem Doppelpunkt, dann steht quasi "array[0] = -1;"
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < array1.Length; i++)
             {
                 Console.WriteLine("Bitte geben Sie die {0}. Zahl ein", i + 1);
                 array1[i] = int.TryParse(Console.ReadLine(), out int num) ? num : -1;

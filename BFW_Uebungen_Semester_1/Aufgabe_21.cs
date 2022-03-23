@@ -10,13 +10,13 @@ namespace BFW_Uebungen_Semester_1
         {
             int[] array = new int[0];
             bool userentscheidung = true;
+            bool userinputrichtig;
             int summe = 0;
 
             //Solange nicht später "n" geantwortet wird, wird diese Schleife ausgeführt.
-            while (userentscheidung == true)
-
+            while (userentscheidung)
             {
-                bool userinputrichtig = false;
+                userinputrichtig = false;
 
                 //Usereingabe
                 Console.WriteLine("Bitte geben Sie eine Zahl ein:");
@@ -29,29 +29,27 @@ namespace BFW_Uebungen_Semester_1
                         tempArr[i] = array[i];
                     array = tempArr;
                     array[^1] = input;
-
                 }
 
                 //Schleife läuft solange bis "y" oder "n" eingegeben wurde.
                 while (!userinputrichtig)
                 {
+                    userinputrichtig = true;
                     Console.WriteLine("Soll noch eine Zahl eingegeben werden? (y/n)");
 
-                    switch (Console.ReadLine())
+                    switch (Console.ReadLine().Trim().ToLower())
                     {
                         //Wenn "n" dann gehen wir aus den beiden Schleifen raus.
                         case "n":
                             userentscheidung = false;
-                            userinputrichtig = true;
                             break;
 
                         //Wenn "y" dann gehen wir nur aus der y/n Schleife raus und gehen zurück zur Zahleingabe.
                         case "y":
-                            userinputrichtig = true;
                             break;
 
-                        //Falls weder "y" oder "n" eingegeben wurde, wird immer wieder nach "y" und "n" gefragt.
                         default:
+                            userinputrichtig = false;
                             break;
                     }
                 }
@@ -65,12 +63,12 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine(summe += k);
             }
 
-            //Array Inhalt ausgeben zum überprüfen.
+            //array inhalt ausgeben zum überprüfen.
 
-            //Console.WriteLine("\nArray:");
+            //console.writeline("\narray:");
             //foreach (int k in array)
             //{
-            //    Console.WriteLine(k);
+            //    console.writeline(k);
             //}
         }
 

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+
+
 
 namespace Weitere_Übungsaufgaben
 {
@@ -62,10 +65,12 @@ namespace Weitere_Übungsaufgaben
                 {
                     long rev = Reverse(primenumber);
                     if (primenumber != rev && !notprime[rev])
-                        Console.Write("{0}. {1} ", anzahl++, primenumber);
+                        Console.WriteLine("{0}. {1} ", anzahl++, primenumber);
                 } 
 
                 primenumber++;
+
+                
                 
                 if (anzahl == eingabeuser + 1)
                   break;
