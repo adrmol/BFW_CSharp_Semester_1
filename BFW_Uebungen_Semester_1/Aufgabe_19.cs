@@ -26,21 +26,6 @@ namespace BFW_Uebungen_Semester_1
                 array1[i] = int.TryParse(Console.ReadLine(), out int num) ? num : -1;
             }
 
-            //Console.WriteLine("Bitte geben Sie die 1. Zahl ein");
-            //array1[0] = int.TryParse(Console.ReadLine(), out int num) ? num : -1;
-
-            //Console.WriteLine("Bitte geben Sie die 2. Zahl ein");
-            //array1[1] = int.TryParse(Console.ReadLine(), out num) ? num : -1;
-
-            //Console.WriteLine("Bitte geben Sie die 3. Zahl ein");
-            //array1[2] = int.TryParse(Console.ReadLine(), out num) ? num : -1;
-
-            //Console.WriteLine("Bitte geben Sie die 4. Zahl ein");
-            //array1[3] = int.TryParse(Console.ReadLine(), out num) ? num : -1;
-
-            //Console.WriteLine("Bitte geben Sie die 5. Zahl ein");
-            //array1[4] = int.TryParse(Console.ReadLine(), out num) ? num : -1;
-
             int summe = 0;
 
             //Der erste Wert mit den verglichen werden soll ist der erste Wert im Array (array1[0]).

@@ -6,7 +6,6 @@ namespace Weitere_Übungsaufgaben
 {
     class Aufgabe_A2
     {
-
         public static void Start()
         {
 

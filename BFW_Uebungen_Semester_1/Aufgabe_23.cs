@@ -46,8 +46,10 @@ namespace BFW_Uebungen_Semester_1
                         tempinput1 = "";
                         for (int i = 0; i < input1.Length; i++)
                         {
-                            if (input1.Substring(i, 1) != "s" &&
+                            if (input1.Substring(i, 1) != "d" &&
+                                input1.Substring(i, 1) != "s" &&
                                 input1.Substring(i, 1) != "t" &&
+                                input1.Substring(i, 1) != "D" &&
                                 input1.Substring(i, 1) != "S" &&
                                 input1.Substring(i, 1) != "T")
                             {
@@ -60,6 +62,9 @@ namespace BFW_Uebungen_Semester_1
                 }
 
             } while (true);
+
+            Console.Write("Ihr String ist: ");
+            output1.Replace('2', '3');
 
             if (output1.Length < 6)
                 Console.WriteLine(output1);

@@ -9,9 +9,11 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             int[] array = new int[4] { 70, 30, 89, 13 };
+
             while (true)
             {
                 Console.WriteLine("Möchten Sie ein Element hinzufügen (1), die Liste ausgeben (2) oder die Liste leeren (3)?");
+
                 switch (Console.ReadLine())
                 {
 
@@ -36,7 +38,7 @@ namespace BFW_Uebungen_Semester_1
                         break;
 
                     case "3":
-                        int[] tempArr1 = new int[array.Length];
+                        int[] tempArr1 = new int[0];
                         array = tempArr1;
                         break;
 

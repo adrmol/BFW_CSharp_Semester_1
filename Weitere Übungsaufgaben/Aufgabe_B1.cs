@@ -8,9 +8,8 @@ namespace Weitere_Übungsaufgaben
     {
         public static void Start()
         {
-            bool eingabe = false;
-            decimal einkaufsPreis = 0;
-            decimal vermietsPreis = 0;
+            bool eingabe;
+            decimal einkaufsPreis, vermietsPreis;
 
             Console.WriteLine("Durchnittlichen Einkaufspreis eingeben:");
 
