@@ -9,8 +9,9 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             int[] array = new int[4] { 70, 30, 89, 13 };
+            bool loop = true;
 
-            while (true)
+            while (loop)
             {
                 Console.WriteLine("Möchten Sie ein Element hinzufügen (1), die Liste ausgeben (2) oder die Liste leeren (3)?");
 
@@ -18,7 +19,8 @@ namespace BFW_Uebungen_Semester_1
                 {
 
                     case "1":
-                        Console.WriteLine("Bitte Element zum Hinzufügen angeben:");
+                        Console.WriteLine("Bitte Element zum Hinzufügen eingeben:");
+
                         if (int.TryParse(Console.ReadLine(), out int input))
                         {
                             int[] tempArr = new int[array.Length + 1];
@@ -31,22 +33,27 @@ namespace BFW_Uebungen_Semester_1
 
                     case "2":
                         Console.WriteLine("Array:");
-                        for (int i = 0; i < array.Length; i++)
+
+                        if (array.Length == 0)
                         {
-                            Console.WriteLine(array[i]);
+                            Console.WriteLine("leer");
+                        }
+                        else
+                        {
+                            for (int i = 0; i < array.Length; i++)
+                                Console.WriteLine(array[i]);
                         }
                         break;
 
                     case "3":
-                        int[] tempArr1 = new int[0];
-                        array = tempArr1;
+                        array = new int[0];
                         break;
 
                     default:
+                        loop = false;
                         break;
                 }
             }
         }
-
     }
 }

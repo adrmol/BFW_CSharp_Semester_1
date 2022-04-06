@@ -63,14 +63,9 @@ namespace BFW_Uebungen_Semester_1
 
             } while (true);
 
+            output1 = output1.Substring(5);
             Console.Write("Ihr String ist: ");
-            output1.Replace('2', '3');
-
-            if (output1.Length < 6)
-                Console.WriteLine(output1);
-            else
-                Console.WriteLine(output1.Substring(5));
+            Console.WriteLine(output1);
         }
-
     }
 }

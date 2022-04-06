@@ -9,7 +9,8 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             int[] arr = new int[9] { 34, 5, 83, 28, 44, 99, 30, 72, 28 };
-            foreach (int i in arr)
+
+            foreach (var i in arr)
             {
                 Console.WriteLine("Die Zahl: " + i );
                 Console.WriteLine("Die Hälfte: " + i / 2);

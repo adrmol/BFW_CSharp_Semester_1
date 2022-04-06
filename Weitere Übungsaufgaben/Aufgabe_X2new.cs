@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Weitere_Übungsaufgaben
 {
-    internal class Aufgabe_X2new
+    class Aufgabe_X2new
     {
 
         public static void Start()

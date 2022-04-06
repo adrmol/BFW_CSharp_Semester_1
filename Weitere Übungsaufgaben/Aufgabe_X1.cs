@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Weitere_Übungsaufgaben
 {
-    internal class Aufgabe_X1
+    class Aufgabe_X1
     {
 
         string[] todo = new string[0];

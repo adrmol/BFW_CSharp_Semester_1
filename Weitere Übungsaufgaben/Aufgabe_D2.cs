@@ -42,55 +42,40 @@ namespace Weitere_Übungsaufgaben
         public static void Start()
         {
             
-            int[] spieler = new int[0];
+            int[] spielfeld = new int[0];
             int spielerschuss;
             int anzahlschuesse = 0;
             int trefferanzahl = 0;
             bool a;
 
-            NewSpielfeld(ref spieler);
-
-            /*
-            Console.Clear();
-            for (int i = 1; i < spieler.Length / 2; i++)
-                Console.Write(" {0}  ", i);
-            for (int i = 10; i <= spieler.Length; i++)
-                Console.Write(" {0} ", i);
-            Console.WriteLine();
-            for (int i = 0; i < spieler.Length; i++)
-            {
-                if (spieler[i] == 0)
-                    Console.Write(" O  ");
-                else if (spieler[i] == 1)
-                    Console.Write(" X  ");
-            }
-            */
+            NewSpielfeld(ref spielfeld);          
 
             do
             {
-
                 Console.Clear();
-                for (int i = 1; i < spieler.Length / 2; i++)
+
+                for (int i = 1; i < spielfeld.Length / 2; i++)
                     Console.Write(" {0}  ", i);
-                for (int i = 10; i <= spieler.Length; i++)
+
+                for (int i = 10; i <= spielfeld.Length; i++)
                     Console.Write(" {0} ", i);
+
                 Console.WriteLine();
-                for (int i = 0; i < spieler.Length; i++)
+
+                for (int i = 0; i < spielfeld.Length; i++)
                 {
-                    if (spieler[i] == 0 || spieler[i] == 1)
+                    if (spielfeld[i] == 0 || spielfeld[i] == 1)
                         Console.Write(" O  ");
-                    else if (spieler[i] == 2)
+                    else if (spielfeld[i] == 2)
                         Console.Write(" X  ");
-                    else if (spieler[i] == 3)
+                    else if (spielfeld[i] == 3)
                         Console.Write(" $  ");
-
                 }
-
 
                 do
                 {
                     Console.WriteLine("\nBitte geben Sie an welches Feld beschossen werden soll!");
-                    a = int.TryParse(Console.ReadLine(), out spielerschuss);
+                    int.TryParse(Console.ReadLine(), out spielerschuss);
                     a = !(spielerschuss >= 1 && spielerschuss <= 20);
                     if (a == true)
                         Console.WriteLine("Bitte geben Sie eine Zahl zwischen 1 und 20 an:");
@@ -100,36 +85,41 @@ namespace Weitere_Übungsaufgaben
                 anzahlschuesse++;
                 spielerschuss--;
 
-                if (spieler[spielerschuss] == 1)
+                if (spielfeld[spielerschuss] == 1)
                 {
                     Console.WriteLine("Treffer!");
-                    spieler[spielerschuss] = 2;
+                    spielfeld[spielerschuss] = 2;
                     trefferanzahl++;
                 }
-                else if (spieler[spielerschuss] == 0)
+                else if (spielfeld[spielerschuss] == 0)
                 {
                     Console.WriteLine("Fehlschuss!");
-                    spieler[spielerschuss] = 3;
+                    spielfeld[spielerschuss] = 3;
                 }
 
 
             } while (trefferanzahl < 6);
 
             Console.Clear();
-            for (int i = 1; i < spieler.Length / 2; i++)
+
+            for (int i = 1; i < spielfeld.Length / 2; i++)
                 Console.Write(" {0}  ", i);
-            for (int i = 10; i <= spieler.Length; i++)
+
+            for (int i = 10; i <= spielfeld.Length; i++)
                 Console.Write(" {0} ", i);
+
             Console.WriteLine();
-            for (int i = 0; i < spieler.Length; i++)
+
+            for (int i = 0; i < spielfeld.Length; i++)
             {
-                if (spieler[i] == 0 || spieler[i] == 1)
+                if (spielfeld[i] == 0 || spielfeld[i] == 1)
                     Console.Write(" O  ");
-                else if (spieler[i] == 2)
+                else if (spielfeld[i] == 2)
                     Console.Write(" X  ");
-                else if (spieler[i] == 3)
+                else if (spielfeld[i] == 3)
                     Console.Write(" $  ");
             }
+
             Console.WriteLine("\nTreffer!");
             Console.WriteLine("Sieg! Anzahl der abgegebenen Schüsse: " + (anzahlschuesse));
         }
