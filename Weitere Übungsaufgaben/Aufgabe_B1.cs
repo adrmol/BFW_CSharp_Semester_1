@@ -27,12 +27,10 @@ namespace Weitere_Übungsaufgaben
                     Console.WriteLine("Falsche Eingabe, bitte nochmal versuchen:");
             } while (eingabe);
 
-            //rundet quasi auf den Monat auf
-            Console.WriteLine("test:" + (Convert.ToInt32(einkaufsPreis / vermietsPreis)) / 12);
             if (einkaufsPreis % vermietsPreis == 0)
-                Console.WriteLine("\nKosten wieder eingenommen nach {0} Monaten ({1} Jahr/e {2} Monat/e)", einkaufsPreis / vermietsPreis, einkaufsPreis / vermietsPreis / 12);
+                Console.WriteLine("\nKosten wieder eingenommen nach {0} Monaten ({1} Jahr/e {2} Monat/e)", Decimal.ToInt32(einkaufsPreis / vermietsPreis) , Decimal.ToInt32(einkaufsPreis / vermietsPreis) /  12, Decimal.ToInt32(einkaufsPreis / vermietsPreis) % 12);
             else
-                Console.WriteLine("\nKosten wieder eingenommen nach {0} Monaten ({1} Jahr/e {2} Monat/e)", Convert.ToInt32(einkaufsPreis / vermietsPreis) + 1, (Convert.ToInt32(einkaufsPreis / vermietsPreis) + 1) /  12, (Convert.ToInt32(einkaufsPreis / vermietsPreis) + 1) % 12);
+                Console.WriteLine("\nKosten wieder eingenommen nach {0} Monaten ({1} Jahr/e {2} Monat/e)", Decimal.ToInt32(einkaufsPreis / vermietsPreis) + 1, Decimal.ToInt32(einkaufsPreis / vermietsPreis) / 12 + 1, Decimal.ToInt32(einkaufsPreis / vermietsPreis) % 12 + 1);
 
             Console.WriteLine("Nach 5 Jahren: " + (vermietsPreis * 5 * 12 - einkaufsPreis));
             Console.WriteLine("Nach 10 Jahren: " + (vermietsPreis * 10 * 12 - einkaufsPreis));
