@@ -14,10 +14,9 @@ namespace Weitere_Übungsaufgaben
             double fallhoehe;
             int anzahl = 0;
 
-            while (!double.TryParse(Console.ReadLine(), out fallhoehe)) 
-            { }
-
-            while (fallhoehe > 0.01)
+            double.TryParse(Console.ReadLine(), out fallhoehe)
+            
+            while (fallhoehe >= 0.01)
             {
                 fallhoehe /= 2;
                 anzahl++;
