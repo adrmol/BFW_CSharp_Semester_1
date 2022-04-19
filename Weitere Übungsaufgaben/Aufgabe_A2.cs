@@ -12,7 +12,7 @@ namespace Weitere_Übungsaufgaben
             Console.WriteLine("Geben Sie eine Fallhöhe in m ein:");
 
             double fallhoehe;
-            double anzahl = 0;
+            int anzahl = 0;
 
             while (!double.TryParse(Console.ReadLine(), out fallhoehe)) 
             { }
