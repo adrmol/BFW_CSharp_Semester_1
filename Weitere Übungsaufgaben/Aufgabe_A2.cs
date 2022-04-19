@@ -8,20 +8,20 @@ namespace Weitere_Übungsaufgaben
     {
         public static void Start()
         {
+            int anzahl = 0;
 
             Console.WriteLine("Geben Sie eine Fallhöhe in m ein:");
 
-            double fallhoehe;
-            int anzahl = 0;
-
-            double.TryParse(Console.ReadLine(), out fallhoehe)
+            double.TryParse(Console.ReadLine(), out double fallhoehe);
             
-            while (fallhoehe >= 0.01)
+            while (fallhoehe >= 0.02)
             {
+                Console.WriteLine(fallhoehe);
                 fallhoehe /= 2;
                 anzahl++;
             }
 
+            Console.WriteLine(fallhoehe);
             Console.WriteLine("\nDie Anzahl der Sprünge: " + anzahl);
         }
     }
