@@ -34,9 +34,8 @@ namespace Weitere_Übungsaufgaben
             } while (true);
 
             for (j = 0; j < i; j++)
-            {
                 i /= 2;
-            }
+
             Console.WriteLine("Ihr Ergebnis ist: " + j);
         }
     }

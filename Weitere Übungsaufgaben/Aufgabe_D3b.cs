@@ -9,7 +9,6 @@ namespace Weitere_Übungsaufgaben
         public static void Start()
         {
             int[] array1 = new int[0];
-            int inteingabe;
             int i = 0;
 
             Console.Clear();
@@ -20,7 +19,7 @@ namespace Weitere_Übungsaufgaben
                 string eingabe = Console.ReadLine().Trim().ToLower();
                 if (eingabe == "ende")
                     break;
-                if (!int.TryParse(eingabe, out inteingabe))
+                if (!int.TryParse(eingabe, out int inteingabe))
                     continue;
                 Array.Resize(ref array1, array1.Length + 1);
                 array1[i++] = inteingabe;
@@ -31,8 +30,6 @@ namespace Weitere_Übungsaufgaben
                     Console.Write(ausgabe + " ");
                 Console.WriteLine("");
             } while (true);
-
-            
 
             //bubblesort
             bool a;

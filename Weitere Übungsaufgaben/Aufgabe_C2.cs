@@ -74,8 +74,6 @@ namespace Weitere_Übungsaufgaben
                     Console.WriteLine("Es können {0} Kekse gebacken werden!", kzahl);
                     break;
             }
-               
         }
-
     }
 }

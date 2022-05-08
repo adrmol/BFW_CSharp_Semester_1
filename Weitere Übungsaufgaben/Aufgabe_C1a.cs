@@ -14,10 +14,8 @@ namespace Weitere_Übungsaufgaben
 
             do
             {
-
                 Console.WriteLine("Soll von Kalorien in Joule [1]\noder von Joule in Kalorien [2]\numgerechnet werden?");
                 umrechnungrichtung = Console.ReadLine();
-
             } while (umrechnungrichtung != "1" && umrechnungrichtung != "2");
 
             do
@@ -26,7 +24,6 @@ namespace Weitere_Übungsaufgaben
 
             switch (umrechnungrichtung)
             {
-
                 case "1":
                     zahl *= 4.1867;
                     einheit = "Joule";
@@ -36,11 +33,9 @@ namespace Weitere_Übungsaufgaben
                     zahl *= 0.23885;
                     einheit = "Kalorien";
                     break;
-
             }
 
             Console.WriteLine("Ihr Ergebnis {0} {1}.", zahl, einheit);
-
         }
     }
 }

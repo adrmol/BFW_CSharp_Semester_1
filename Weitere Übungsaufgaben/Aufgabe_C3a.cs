@@ -23,9 +23,7 @@ namespace Weitere_Übungsaufgaben
                 fib1 = tempfib;
             } while (fib2 <= eingabe);
 
-            if (fib2 >= eingabe)
-            { }
-            else
+            if (fib2 < eingabe)
                 Console.WriteLine(fib2);
         }
         public static void Start()
@@ -70,9 +68,6 @@ namespace Weitere_Übungsaufgaben
                         Console.WriteLine("{0} ist keine Fibonacci-Zahl!", eingabeuser);
                     break;
             }
-
-
-
         }
     }
 }

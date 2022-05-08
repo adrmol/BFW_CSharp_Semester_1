@@ -8,24 +8,24 @@ namespace Weitere_Übungsaufgaben
     {
         public static void Start()
         {
-            bool eingabe;
+            bool loop;
             decimal einkaufsPreis, vermietsPreis;
 
             Console.WriteLine("Durchnittlichen Einkaufspreis eingeben:");
 
             do
             {
-                if (eingabe = !decimal.TryParse(Console.ReadLine(), out einkaufsPreis))
+                if (loop = !decimal.TryParse(Console.ReadLine(), out einkaufsPreis))
                     Console.WriteLine("Falsche Eingabe, bitte nochmal versuchen:");
-            } while (eingabe);
+            } while (loop);
 
             Console.WriteLine("Durchnittlichen Vermietspreis eingeben:");
 
             do
             {
-                if (eingabe = !decimal.TryParse(Console.ReadLine(), out vermietsPreis))
+                if (loop = !decimal.TryParse(Console.ReadLine(), out vermietsPreis))
                     Console.WriteLine("Falsche Eingabe, bitte nochmal versuchen:");
-            } while (eingabe);
+            } while (loop);
 
             Console.WriteLine("\nKosten wieder eingenommen nach {0} Monaten ({1} Jahr/e {2} Monat/e)", Math.Ceiling(einkaufsPreis / vermietsPreis) , Math.Floor(einkaufsPreis / vermietsPreis / 12), Math.Ceiling(einkaufsPreis / vermietsPreis % 12));
             

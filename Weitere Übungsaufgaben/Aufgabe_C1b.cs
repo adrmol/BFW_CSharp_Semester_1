@@ -105,7 +105,6 @@ namespace Weitere_Übungsaufgaben
                             break;
                     }
                 }
-
             } while (korrekteeingabe);
 
             Console.WriteLine("{0} {1} sind {2} {3}", zahl, einheit1, ergebnis, einheit2);

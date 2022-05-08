@@ -8,7 +8,6 @@ namespace Weitere_Übungsaufgaben
     {
         public static void Start()
         {
-
             int[] array1 = new int[0];
             Console.Clear();
 

@@ -21,26 +21,27 @@ namespace Weitere_Übungsaufgaben
             switch (todo)
             {
                 case "1":
-                    double rehoehe;
-                    double relaenge;
+                    double rechteck_hoehe;
+                    double rechteck_laenge;
+
                     do
                     {
                         Console.Write("Höhe: ");
                         strhoehe = Console.ReadLine();
-                    } while (!double.TryParse(strhoehe, out rehoehe) || rehoehe <= 0);
+                    } while (!double.TryParse(strhoehe, out rechteck_hoehe) || rechteck_hoehe <= 0);
 
                     do
                     {
                         Console.Write("Länge: ");
                         strlaenge = Console.ReadLine();
-                    } while (!double.TryParse(strlaenge, out relaenge) || relaenge <= 0);
+                    } while (!double.TryParse(strlaenge, out rechteck_laenge) || rechteck_laenge <= 0);
 
-                    Console.WriteLine("Flächeninhalt: " + rehoehe * relaenge);
+                    Console.WriteLine("Flächeninhalt: " + rechteck_hoehe * rechteck_laenge);
                     break;
 
                 case "2":
                     double radius;
-                    
+
                     do
                     {
                         Console.Write("Höhe: ");
@@ -50,21 +51,22 @@ namespace Weitere_Übungsaufgaben
                     break;
 
                 case "3":
-                    double drhoehe;
-                    double drlaenge;
+                    double dreieck_laenge;
+                    double dreieck_hoehe;
+
                     do
                     {
                         Console.Write("Höhe: ");
                         strhoehe = Console.ReadLine();
-                    } while (!double.TryParse(strhoehe, out drhoehe) || drhoehe <= 0);
+                    } while (!double.TryParse(strhoehe, out dreieck_hoehe) || dreieck_hoehe <= 0);
 
                     do
                     {
                         Console.Write("Länge: ");
                         strlaenge = Console.ReadLine();
-                    } while (!double.TryParse(strlaenge, out drlaenge) || drlaenge <= 0);
+                    } while (!double.TryParse(strlaenge, out dreieck_laenge) || dreieck_laenge <= 0);
 
-                    Console.WriteLine("Flächeninhalt: " + drhoehe * drlaenge / 2);
+                    Console.WriteLine("Flächeninhalt: " + dreieck_hoehe * dreieck_laenge / 2);
                     break;
 
             }
