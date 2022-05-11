@@ -12,71 +12,65 @@ namespace Weitere_Übungsaufgaben
 
             Console.WriteLine("Eingabe:");
             string eingabe = Console.ReadLine().Trim();
-            string verkuerzteeingabe = "";
-            int anzahl = 0;
-            int i;
 
-            try
+            if (!(eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out _)))
             {
-                if (eingabe.Length > 0 && !(eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out int useless)))
-                {
-                    for (i = 1; i < eingabe.Length; i++)
-                        if (eingabe.Substring(i - 1, 1) == eingabe.Substring(i, 1))
-                            anzahl++;
-                        else
-                        {
-                            anzahl++;
-                            if (eingabe[i - 1] == '%' || eingabe[i - 1] == '\\')
-                                verkuerzteeingabe += "%" + anzahl + "%\\" + eingabe.Substring(i - 1, 1);
-                            else
-                                verkuerzteeingabe += "%" + anzahl + "%" + eingabe.Substring(i - 1, 1);
-                            anzahl = 0;
-                        }
+                string verkuerzteEingabe = "";
+                int anzahl = 0;
 
+                for (int i = 0; i < eingabe.Length; i++)
+                {
                     anzahl++;
-                    verkuerzteeingabe += "%" + anzahl + "%" + eingabe.Substring(i - 1, 1) + "%";
-                    Console.WriteLine("Verkürzte Form: " + verkuerzteeingabe);
-                }
-                else if (eingabe.Length > 0 && (eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out useless)))
-                {
-                    string ausgabe = "";
-                    bool zahl = true;
-                    string tempAnzahl = "";
-                    int tempAnzahlZahl = 0;
 
-                    for (int j = 1; j < eingabe.Length; j++)
-                        if (eingabe.Substring(j, 1) == "%")
-                        {
-                            zahl = !zahl;
-                            tempAnzahlZahl = Convert.ToInt32(tempAnzahl);
-                            if (zahl == true)
-                                tempAnzahl = "";
-                        }
-                        else if (zahl)
-                            tempAnzahl += eingabe.Substring(j, 1);
+                    if (i == eingabe.Length - 1)    //für das letzte Element (sonst läuft i außerhalb des strings)
+                    {
+                        verkuerzteEingabe += "%" + anzahl + "%" + eingabe.Substring(i, 1) + "%";
+                        Console.WriteLine("Verkürzte Form: " + verkuerzteEingabe);
+                        break;
+                    }
+
+                    if (eingabe.Substring(i, 1) != eingabe.Substring(i + 1, 1))
+                    {
+                        if (eingabe[i] == '%' || eingabe[i + 1] == '\\')
+                            verkuerzteEingabe += "%" + anzahl + "%\\" + eingabe.Substring(i, 1);
                         else
-                            if (eingabe.Substring(j, 1) == "\\")
-                            {
-                                for (int k = 0; k < tempAnzahlZahl; k++)
-                                    ausgabe += eingabe.Substring(j + 1, 1);
-                                j++;
-                            }
-                            else
-                                for (int k = 0; k < tempAnzahlZahl; k++)
-                                    ausgabe += eingabe.Substring(j, 1);
-                        
-                    Console.WriteLine("Verlängerte Form: " + ausgabe);
+                            verkuerzteEingabe += "%" + anzahl + "%" + eingabe.Substring(i, 1);
+                        anzahl = 0;
+                    }
                 }
-                else
-                    Console.WriteLine("Keine Eingabe!");
-
-                Console.WriteLine("Tschüss!");
             }
-            catch
+            else if (eingabe[0] == '%' && int.TryParse(eingabe.Substring(1, 1), out _))
             {
-                Console.WriteLine("Ungültige Angabe! Bitte halten Sie die Regeln für die verkürzte oder verlängerte Form ein!");
-            }
+                string ausgabe = "";
+                bool zahl = true;
+                string tempAnzahlString = "";
+                int tempAnzahl = 0;
 
+                for (int i = 1; i < eingabe.Length; i++)
+                {
+                    if (eingabe.Substring(i, 1) == "%")
+                    {
+                        zahl = !zahl;
+                        tempAnzahl = Convert.ToInt32(tempAnzahlString);
+                        if (zahl)
+                            tempAnzahlString = "";
+                    }
+                    else if (zahl)
+                        tempAnzahlString += eingabe.Substring(i, 1);
+                    else
+                        if (eingabe.Substring(i, 1) == "\\")
+                    {
+                        for (int k = 0; k < tempAnzahl; k++)
+                            ausgabe += eingabe.Substring(i + 1, 1);
+                        i++;
+                    }
+                    else
+                        for (int k = 0; k < tempAnzahl; k++)
+                            ausgabe += eingabe.Substring(i, 1);
+                }
+                Console.WriteLine("Verlängerte Form: " + ausgabe);
+            }
+            Console.WriteLine("Tschüss!");
         }
     }
 }

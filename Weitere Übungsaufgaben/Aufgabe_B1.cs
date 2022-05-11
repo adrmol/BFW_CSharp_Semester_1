@@ -11,7 +11,8 @@ namespace Weitere_Übungsaufgaben
             bool loop;
             decimal einkaufsPreis, vermietsPreis;
 
-            Console.WriteLine("Durchnittlichen Einkaufspreis eingeben:");
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("Durchnittlichen Einkaufspreis eingeben: ");
 
             do
             {

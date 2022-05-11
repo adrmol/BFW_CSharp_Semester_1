@@ -11,8 +11,7 @@ namespace BFW_Uebungen_Semester_1
             //Eingabe Zahl oder String.
             Console.WriteLine("Hallo! Geben Sie einen String oder eine Zahl ein: ");
             string input1 = Console.ReadLine();
-            int ergebnis1 = 0;
-            int ergebnis2 = 0;
+            int ergebnis1, ergebnis2;
 
             if (!int.TryParse(input1 , out int n))
             {
