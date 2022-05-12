@@ -46,6 +46,11 @@ namespace Weitere_Übungsaufgaben
                         Aufgabe_B2b.Start();
                         break;
 
+                    case "b2bv2":
+                        Console.WriteLine("Aufgabe B2bv2:\n");
+                        Aufgabe_B2bv2.Start();
+                        break;
+
                     case "c1a":
                         Console.WriteLine("Aufgabe C1a:\n");
                         Aufgabe_C1a.Start();
