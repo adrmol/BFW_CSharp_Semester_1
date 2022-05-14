@@ -10,18 +10,17 @@ namespace Weitere_Übungsaufgaben
         {
             string entscheidung, eingabe, anzahl_Chars_String = "", ausgabe = "";
             int anzahl_Chars = 1;
-            bool zahl = true;
 
             Console.WriteLine("Komprimieren(1) oder Ausschreiben(2)?");
             entscheidung = Console.ReadLine();
 
             Console.WriteLine("Eingabe:");
-            //eingabe = Console.ReadLine();
+            eingabe = Console.ReadLine();
 
             switch (entscheidung)
             {
                 case "1":
-                    eingabe = "WWWWW%%%%DDDDD\\\\\\\\\\\\SSSSSS11";
+                    //eingabe = "WWWWW%%%%DDDDD\\\\\\\\\\\\SSSSSS11";
                     for (int i = 1; i < eingabe.Length; i++)
                     {
                         if (i == eingabe.Length - 1)
@@ -42,7 +41,8 @@ namespace Weitere_Übungsaufgaben
                     break;
 
                 case "2":
-                    eingabe = "%5%W%4%\\%%5%D%6%\\\\%6%S%2%1";
+                    //eingabe = "%5%W%4%\\%%5%D%6%\\\\%6%S%2%1";
+                    bool zahl = true;
                     for (int i = 1; i < eingabe.Length; i++)
                     {
                         if (zahl)
@@ -56,7 +56,7 @@ namespace Weitere_Übungsaufgaben
                         }
                         else
                         {
-                            if (eingabe[i] == '\\')
+                            if (eingabe[i] == '\\' && eingabe[i - 1] != '\\')
                                 i++;
                             anzahl_Chars = Convert.ToInt32(anzahl_Chars_String);
                             for (int j = 0; j < anzahl_Chars; j++)
