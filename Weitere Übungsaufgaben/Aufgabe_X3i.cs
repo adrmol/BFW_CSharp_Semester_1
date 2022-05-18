@@ -20,8 +20,9 @@ class Aufgabe_X3i
     // Sieve method used for
     // generating emirp number
     // (use of sieve of Eratosthenes)
-    static void printEmirp(int n)
+    static void printEmirp()
     {
+        int n = int.MaxValue / 2;
         // Create a boolean array
         // "prime[0..n]" and initialize
         // all entries it as true. A value
@@ -70,8 +71,9 @@ class Aufgabe_X3i
     // Driver code
     public static void Start()
     {
-        Console.WriteLine("Mirpzahlen ausgeben bis:");
-        printEmirp(Convert.ToInt32(Console.ReadLine()));
+        Console.WriteLine("Wie viele Mirpzahlen ausgeben?");
+        for (int i = 0; i < Convert.ToInt32(Console.ReadLine()); i++)
+            printEmirp();
     }
 }
 

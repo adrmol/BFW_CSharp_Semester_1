@@ -8,8 +8,8 @@ namespace Weitere_Übungsaufgaben
     {
         public static void Start()
         {
-            string entscheidung, eingabe, anzahl_Chars_String = "", ausgabe = "";
-            int anzahl_Chars = 1;
+            string entscheidung, eingabe, ausgabe = "";
+            int anzahl_Chars;
 
             Console.WriteLine("Komprimieren(1) oder Ausschreiben(2)?");
             entscheidung = Console.ReadLine();
@@ -21,18 +21,18 @@ namespace Weitere_Übungsaufgaben
             {
                 case "1":
                     //eingabe = "WWWWW%%%%DDDDD\\\\\\\\\\\\SSSSSS11";
-                    for (int i = 1; i < eingabe.Length; i++)
+                    eingabe += '\0';
+                    anzahl_Chars = 1;
+                    for (int i = 0; i < eingabe.Length - 1; i++)
                     {
-                        if (i == eingabe.Length - 1)
-                            anzahl_Chars++;
-                        if (eingabe[i] == eingabe[i - 1] && i != eingabe.Length - 1)
+                        if (eingabe[i] == eingabe[i + 1])
                             anzahl_Chars++;
                         else
                         {
-                            if (eingabe[i - 1] == '%' || eingabe[i - 1] == '\\')
-                                ausgabe += "%" + anzahl_Chars + "%\\" + eingabe[i - 1];
+                            if (eingabe[i] == '%' || eingabe[i] == '\\')
+                                ausgabe += "%" + anzahl_Chars + "%\\" + eingabe[i];
                             else
-                                ausgabe += "%" + anzahl_Chars + "%" + eingabe[i - 1];
+                                ausgabe += "%" + anzahl_Chars + "%" + eingabe[i];
                             anzahl_Chars = 1;
                         }
                     }
@@ -43,26 +43,27 @@ namespace Weitere_Übungsaufgaben
                 case "2":
                     //eingabe = "%5%W%4%\\%%5%D%6%\\\\%6%S%2%1";
                     bool zahl = true;
+                    anzahl_Chars = 0;
                     for (int i = 1; i < eingabe.Length; i++)
                     {
                         if (zahl)
                         {
                             if (eingabe[i] == '%')
-                            {
                                 zahl = false;
-                                continue;
+                            else
+                            {
+                                anzahl_Chars *= 10;
+                                anzahl_Chars += eingabe[i] - '0';
                             }
-                            anzahl_Chars_String += eingabe[i];
                         }
                         else
                         {
                             if (eingabe[i] == '\\' && eingabe[i - 1] != '\\')
                                 i++;
-                            anzahl_Chars = Convert.ToInt32(anzahl_Chars_String);
                             for (int j = 0; j < anzahl_Chars; j++)
                                 ausgabe += eingabe[i];
                             zahl = true;
-                            anzahl_Chars_String = "";
+                            anzahl_Chars = 0;
                             i++;
                         }
                     }
