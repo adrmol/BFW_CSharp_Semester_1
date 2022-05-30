@@ -11,46 +11,46 @@ namespace Weitere_Übungsaufgaben
         {
 
             double[] vorhandeneZutaten = new double[6];
-            double[] rezept = new double[6] { 50, 25, 0.2, 15, 0.4, 0.2 };
-            int i = 0, a = 0;
+            double[] rezept = new double[] { 50, 25, 0.2, 15, 0.4, 0.2 };
+            int indexEingaben = 0;
 
             do
             {
                 Console.Write("Wie viel Gramm Mehl ist vorhanden? Mehl in g: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
-            i++;
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
+            indexEingaben++;
 
             do
             {
                 Console.Write("Wie viel Gramm Butter ist vorhanden? Butter in g: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
-            i++;
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
+            indexEingaben++;
 
             do
             {
                 Console.Write("Wie viele Eier sind vorhanden? Anzahl Eier: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
-            i++;
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
+            indexEingaben++;
 
             do
             {
                 Console.Write("Wie viel Gramm Zucker ist vorhanden? Zucker in g: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
-            i++;
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
+            indexEingaben++;
 
             do
             {
                 Console.Write("Wie viel Packungen Vanillazucker ist vorhanden? Anzahl Vaniallazuckerpackungen: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
-            i++;
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
+            indexEingaben++;
 
             do
             {
                 Console.Write("Wie viel Prisen Salz (1g) sind vorhanden? Salz in g: ");
-            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[i]));
+            } while (!double.TryParse(Console.ReadLine(), out vorhandeneZutaten[indexEingaben]));
 
-            foreach (int j in vorhandeneZutaten)
-                vorhandeneZutaten[a] /= rezept[a++];
+            for (int i = 0; i < vorhandeneZutaten.Length; i++)
+                vorhandeneZutaten[i] /= rezept[i];
 
             double kzahl = vorhandeneZutaten[0];
 
