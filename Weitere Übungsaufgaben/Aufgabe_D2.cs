@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Weitere_Übungsaufgaben
 {
     class Aufgabe_D2
     {
-        public static void NewSpielfeld(ref int[] feld)
+        public static int[] NewSpielfeld()
         {
-
-            feld = new int[20];
-
+            var feld = new int[20];
             var rand = new Random();
             int fregatte = rand.Next(0, 18);
             feld[fregatte] = 1;
@@ -38,17 +34,16 @@ namespace Weitere_Übungsaufgaben
                 }
             } while (true);
 
+            return feld;
         }
         public static void Start()
         {
             
-            int[] spielfeld = new int[0];
+            int[] spielfeld = NewSpielfeld();
             int spielerschuss;
             int anzahlschuesse = 0;
             int trefferanzahl = 0;
             bool a;
-
-            NewSpielfeld(ref spielfeld);          
 
             do
             {
