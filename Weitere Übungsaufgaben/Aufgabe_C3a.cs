@@ -6,29 +6,12 @@ namespace Weitere_Übungsaufgaben
 {
     class Aufgabe_C3a
     {
-        public static void PrintFib(int eingabe)
-        {
-            
-            int fib1 = 0;
-            int fib2 = 1;
-            int tempfib;
-
-            Console.WriteLine();
-
-            do
-            {
-                Console.WriteLine(fib2);
-                tempfib = fib2;
-                fib2 += fib1;
-                fib1 = tempfib;
-            } while (fib2 <= eingabe);
-
-            if (fib2 < eingabe)
-                Console.WriteLine(fib2);
-        }
         public static void Start()
         {
+            int fib1 = 0;
+            int fib2 = 1;
             int eingabeuser;
+            int tempfib;
             string todo;
 
             do
@@ -43,17 +26,25 @@ namespace Weitere_Übungsaufgaben
                     do
                         Console.WriteLine("Bitte geben Sie an, bis zu welcher Zahl die Fibonacci-Zahlen ausgegeben werden:");
                     while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
-                    PrintFib(eingabeuser);
+                    
+                    Console.WriteLine();
+
+                    do
+                    {
+                        Console.WriteLine(fib2);
+                        tempfib = fib2;
+                        fib2 += fib1;
+                        fib1 = tempfib;
+                    } while (fib2 <= eingabeuser);
+
+                    if (fib2 < eingabeuser)
+                        Console.WriteLine(fib2);
                     break;
 
                 case "2":
                     do
                         Console.WriteLine("Bitte geben Sie an, welche Zahl getestet werden soll, ob sie eine Fibonacci-Zahl ist:");
                     while (!int.TryParse(Console.ReadLine(), out eingabeuser) || eingabeuser < 1);
-
-                    int fib1 = 0;
-                    int fib2 = 1;
-                    int tempfib;
 
                     do
                     {
