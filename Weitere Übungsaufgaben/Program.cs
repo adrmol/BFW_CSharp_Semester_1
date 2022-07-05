@@ -8,7 +8,7 @@ namespace Weitere_Übungsaufgaben
         {
             while (true)
             {
-                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [A1, A1x, A2, A3, B1, B2a, B2b, C1a, C1b, C2, C3a, C3b, D1, D2, D3b, D3i, G1, G2, X1, X2, X2new, X3, X3i, X3new, Y1, Y2, Y3];\nProgramm schließen: exit");
+                Console.WriteLine("Welche Aufgabe soll ausgeführt werden?\nVerfügbare Aufgaben: [A1, A1x, A2, A3, B1, B2a, B2b, C1a, C1b, C2, C3a, C3b, D1, D2, D3b, D3i, G1, G2, X1, X2, X2new, X3, X3i, X3new, Y1, Y2, Y3, WS_21_22, WS_21_22_2];\nProgramm schließen: exit");
                 switch (Console.ReadLine().ToLower())
                 {
                     case "a1":
@@ -169,6 +169,17 @@ namespace Weitere_Übungsaufgaben
                         Aufgabe_X3v2 aufgabe_X3v2 = new Aufgabe_X3v2();
                         aufgabe_X3v2.Start();
                         break;
+
+                    case "ws_21_22":
+                        Console.WriteLine("Aufgabe WS_21_22:\n");
+                        WS_21_22.Start();
+                        break;
+
+                    case "ws_21_22_2":
+                        Console.WriteLine("Aufgabe WS_21_22_2:\n");
+                        WS_21_22_2.Start();
+                        break;
+                        
 
                     case "exit":
                         Environment.Exit(0);
