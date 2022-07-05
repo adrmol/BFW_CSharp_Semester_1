@@ -26,8 +26,7 @@ namespace Weitere_Übungsaufgaben
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Geld im Automaten: {0}\tVerfügbare Snack Sorten: {1}\n", geld.ToString("C",
-                  CultureInfo.CreateSpecificCulture("jp-JP")), snacks.Length);
+                Console.WriteLine("Geld im Automaten: {0:C}\tVerfügbare Snack Sorten: {1}\n", geld, snacks.Length);
                 Console.WriteLine("Geld einwerfen: [0]\nSnack kaufen: [1]");
                 int decision = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
